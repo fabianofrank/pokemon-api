@@ -10,7 +10,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Pokedex',
-      template: './src/index.html'
+      template: './src/index.html',
     }),
 
   ],
