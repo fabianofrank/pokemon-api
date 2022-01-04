@@ -1,5 +1,5 @@
 // import { pokeCall } from './apiCall.js';
-
+import close from './cancel.png';
 // const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ntSEDKBSp5jVB8zr1TJB/comments'
 
 // const postCom = async (e) => {
@@ -29,6 +29,14 @@ const pokeCall = async (e) => {
 const arr = ['pikachu', 'mewtwo', 'mew', 'ninetales', 'charizard', 'gengar', 'lugia', 'cresselia'];
 const commentWindow = document.getElementById('comment-window');
 
+const toggle = () => {
+  if (commentWindow.style.display === 'block') {
+    commentWindow.style.display = 'none';
+  } else {
+    commentWindow.style.display = 'block';
+  }
+}
+
 const displayPokemonStats = (e) => {
   pokeCall(e).then((poke) => {
     console.log(poke)
@@ -41,6 +49,10 @@ const displayPokemonStats = (e) => {
     let pokeHeight = poke.height;
     let pokePower = poke.base_experience;
     
+    const cancelImage = document.createElement('img');
+    cancelImage.width = '48';
+    cancelImage.src = close;
+
     const img  = document.createElement('img');
     img.src = pokeImg;
     img.width = '160';
@@ -64,11 +76,14 @@ const displayPokemonStats = (e) => {
     power.innerText = `Power: ${pokePower} pts`;
     
     commentWindow.appendChild(img);
+    commentWindow.appendChild(cancelImage);
     commentWindow.appendChild(name);
     commentWindow.appendChild(type);
     commentWindow.appendChild(weight);
     commentWindow.appendChild(height);
     commentWindow.appendChild(power);
+    
+    cancelImage.addEventListener('click', toggle);
   });
 };
 
@@ -77,13 +92,8 @@ displayPokemonStats(arr[i]);
 }
 
 const commentBtn = document.getElementById('comment-button');
-commentBtn.addEventListener('click', (e) => {
-  if (commentWindow.style.display === 'block') {
-    commentWindow.style.display = 'none';
-  } else {
-    commentWindow.style.display = 'block';
-  }
-})
+commentBtn.addEventListener('click', toggle);
+
 
 // export { postCom, getCom };
 export { pokeCall };
