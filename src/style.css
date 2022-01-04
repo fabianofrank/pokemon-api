@@ -1,3 +1,7 @@
 body {
   background-color: rgb(0, 89, 255);
 }
+
+#comment-window {
+  display: none;
+}
