@@ -31,27 +31,27 @@ body {
 }
 
 .pikachu {
-  background-color: #c4a369;
+  background-color: #ffcb71;
 }
 
 .mew {
-  background-color: rgb(192, 166, 209);
+  background-color: rgb(229, 189, 255);
 }
 
 .mewtwo {
-  background-color: rgb(58, 58, 177);
+  background-color: rgb(179, 179, 255);
 }
 
-.bulbasaur {
-  background-color: #67a890;
+.lugia {
+  background-color: #5c38ff;
 }
 
-.squirtle {
+.gengar {
   background-color: #71b7c7;
 }
 
 .ninetales {
-  background-color: #48917f;
+  background-color: #ff4b81;
 }
 
 .charizard {
@@ -59,7 +59,7 @@ body {
 }
 
 .cresselia {
-  background-color: #488899;
+  background-color: #c976f8;
 }
 
 .pokeFoto {

@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file */
 import './style.css';
 import { pokeCall } from './apiCall.js';
-import { displayPokemonStats, toggle } from './comments';
+import { toggle } from './comments.js';
 
 // class Pokecard {
 //   constructor(name, img, weight, height, power, id) {
@@ -58,8 +58,6 @@ class Pokedex {
 
 const examplePokeArr = ['pikachu', 'mewtwo', 'mew', 'ninetales', 'charizard', 'gengar', 'lugia', 'cresselia'];
 const myPokedex = new Pokedex();
-
-
 
 for (let i = 0; i < examplePokeArr.length; i += 1) {
   myPokedex.getPokemon(examplePokeArr[i]);

@@ -1,8 +1,8 @@
+/* eslint-disbale import/no-cycle */
 import { pokeCall } from './apiCall.js';
 import close from './cancel.png';
-import { Pokedex, myPokedex, examplePokeArr } from './index.js';
 
-const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ntSEDKBSp5jVB8zr1TJB/comments'
+const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ntSEDKBSp5jVB8zr1TJB/comments';
 
 const postCom = async (e) => {
   const response = await fetch(baseURL, {
@@ -13,7 +13,7 @@ const postCom = async (e) => {
     body: JSON.stringify(e),
   });
   return response.json();
-}
+};
 
 async function getCom() {
   const response = await fetch(baseURL);
@@ -22,31 +22,19 @@ async function getCom() {
 
 const commentWindow = document.getElementById('comment-window');
 
-const toggle = (id) => {
-  const statsWindow = document.getElementById('comment-window');
-  console.log(statsWindow);
-  if (statsWindow.style.display === 'block') {
-    statsWindow.style.display = 'none';
-    statsWindow.innerHTML = '';
-  } else {
-    statsWindow.style.display = 'block';
-    displayPokemonStats(id);
-  }
-}
-
 const displayPokemonStats = (e) => {
   pokeCall(e).then((poke) => {
-    let pokeImg = poke.sprites.front_shiny;
-    let pokeTypeOne = poke.types[0].type.name;
-    let pokeName = poke.name;
-    let pokeWeight = poke.weight;
-    let pokeHeight = poke.height;
-    let pokePower = poke.base_experience;
-    
+    const pokeImg = poke.sprites.front_shiny;
+    const pokeTypeOne = poke.types[0].type.name;
+    const pokeName = poke.name;
+    const pokeWeight = poke.weight;
+    const pokeHeight = poke.height;
+    const pokePower = poke.base_experience;
+
     const cancelImage = document.createElement('img');
     cancelImage.width = '48';
     cancelImage.src = close;
-    const img  = document.createElement('img');
+    const img = document.createElement('img');
     img.src = pokeImg;
     img.width = '160';
     const name = document.createElement('h2');
@@ -59,7 +47,7 @@ const displayPokemonStats = (e) => {
     height.innerText = `Height: ${pokeHeight} ft`;
     const power = document.createElement('p');
     power.innerText = `Power: ${pokePower} pts`;
-    
+
     commentWindow.appendChild(img);
     commentWindow.appendChild(cancelImage);
     commentWindow.appendChild(name);
@@ -67,10 +55,26 @@ const displayPokemonStats = (e) => {
     commentWindow.appendChild(weight);
     commentWindow.appendChild(height);
     commentWindow.appendChild(power);
-    
-    cancelImage.addEventListener('click', toggle);
+
+    cancelImage.addEventListener('click', () => {
+      if (commentWindow.style.display === 'block') {
+        commentWindow.style.display = 'none';
+        commentWindow.innerHTML = '';
+      }
+    });
   });
 };
 
+const toggle = (id) => {
+  if (commentWindow.style.display === 'none') {
+    commentWindow.style.display = 'block';
+    displayPokemonStats(id);
+  } else {
+    commentWindow.style.display = 'none';
+    commentWindow.innerHTML = '';
+  }
+};
 
-export { postCom, getCom, displayPokemonStats, toggle };
+export {
+  postCom, getCom, displayPokemonStats, toggle,
+};
