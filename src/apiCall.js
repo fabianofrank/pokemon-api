@@ -1,10 +1,9 @@
-const pokeCall = async () => {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/`, {
+const pokeCall = async (e) => {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${e}/`, {
       method: 'GET',
     });
-    const pokemonList = await response.json();
-    return pokemonList;
+    const pokemonInfo = await response.json();
+    return pokemonInfo;
   };
 
   export { pokeCall };
-  
