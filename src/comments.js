@@ -47,7 +47,41 @@ const displayPokemonStats = (e) => {
     height.innerText = `Height: ${pokeHeight} ft`;
     const power = document.createElement('p');
     power.innerText = `Power: ${pokePower} pts`;
+    //Comment Section
+    const commentSection = document.createElement('comments-section');
+    commentSection.classList.add('comments-section');
+    const titleComment = document.createElement('h3');
+    titleComment.textContent = "Best Comments";
+    const listComments = document.createElement('ul');
+    listComments.classList.add('comments-list');
+    listComments.style.display = 'none';
+    const leaveComment = document.createElement('p');
+    leaveComment.textContent = "Add your comment";
+    const formComments = document.createElement('form');
+    formComments.classList.add('leave-comm');
+    const nameComment = document.createElement('input');
+    nameComment.classList.add('input-cname');
+    nameComment.placeholder = "Your name";
+    nameComment.setAttribute("required", "");
+    nameComment.required = true;   
+    const textComment = document.createElement('textarea');
+    textComment.classList.add('input-textComment');
+    textComment.placeholder = "Your comment";
+    textComment.setAttribute("required", "");
+    textComment.required = true; 
+    const btnSubmitComment = document.createElement('button');
+    btnSubmitComment.setAttribute("type", "submit");
+    btnSubmitComment.classList.add('pop-up-btn');
+    btnSubmitComment.textContent = "Send your comment";
 
+    commentSection.appendChild(titleComment);
+    commentSection.appendChild(listComments);
+    commentSection.appendChild(leaveComment);
+    commentSection.appendChild(formComments);
+    commentSection.appendChild(nameComment);
+    commentSection.appendChild(textComment);
+    commentSection.appendChild(btnSubmitComment);
+    
     commentWindow.appendChild(img);
     commentWindow.appendChild(cancelImage);
     commentWindow.appendChild(name);
@@ -55,7 +89,8 @@ const displayPokemonStats = (e) => {
     commentWindow.appendChild(weight);
     commentWindow.appendChild(height);
     commentWindow.appendChild(power);
-
+    commentWindow.appendChild(commentSection);
+    
     cancelImage.addEventListener('click', () => {
       if (commentWindow.style.display === 'block') {
         commentWindow.style.display = 'none';
