@@ -1,30 +1,22 @@
-// import { pokeCall } from './apiCall.js';
+import { pokeCall } from './apiCall.js';
 
-// const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ntSEDKBSp5jVB8zr1TJB/comments'
+const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ntSEDKBSp5jVB8zr1TJB/comments'
 
-// const postCom = async (e) => {
-//   const response = await fetch(baseURL, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(e),
-//   });
-//   return response.json();
-// }
-
-// async function getCom() {
-//   const response = await fetch(baseURL);
-//   return response.json();
-// }
-
-const pokeCall = async (e) => {
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${e}/`, {
-    method: 'GET',
+const postCom = async (e) => {
+  const response = await fetch(baseURL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(e),
   });
-  const pokemonList = await response.json();
-  return pokemonList;
-};
+  return response.json();
+}
+
+async function getCom() {
+  const response = await fetch(baseURL);
+  return response.json();
+}
 
 const arr = ['pikachu', 'mewtwo', 'mew', 'ninetales', 'charizard', 'gengar', 'lugia', 'cresselia'];
 const commentWindow = document.getElementById('comment-window');
@@ -72,8 +64,8 @@ const displayPokemonStats = (e) => {
   });
 };
 
-for (let i = 0; i < arr.length; i++){
-displayPokemonStats(arr[i]);
+for (let i = 0; i < arr.length; i++) {
+  displayPokemonStats(arr[i]);
 }
 
 const commentBtn = document.getElementById('comment-button');
@@ -85,5 +77,4 @@ commentBtn.addEventListener('click', (e) => {
   }
 })
 
-// export { postCom, getCom };
-export { pokeCall };
+export { postCom, getCom };
