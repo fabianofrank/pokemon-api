@@ -1,6 +1,7 @@
 /* eslint-disable max-classes-per-file */
 import './style.css';
 import { pokeCall } from './apiCall.js';
+import { displayPokemonStats, toggle } from './comments';
 
 // class Pokecard {
 //   constructor(name, img, weight, height, power, id) {
@@ -31,6 +32,7 @@ class Pokedex {
     pokeFoto.classList.add('pokeFoto');
     pokeFoto.src = `${pokemon.sprites.front_shiny}`;
     const commentBttn = document.createElement('button');
+    commentBttn.onclick = () => toggle(pokemon.id);
     const reserveBttn = document.createElement('button');
     commentBttn.id = `commentBttn${pokemon.id}`;
     commentBttn.innerText = 'comment';
@@ -54,9 +56,13 @@ class Pokedex {
   }
 }
 
-const examplePokeArr = ['pikachu', 'mew', 'mewtwo', 'squirtle', 'bulbasaur', 'ivysaur', 'venusaur', 'charizard'];
+const examplePokeArr = ['pikachu', 'mewtwo', 'mew', 'ninetales', 'charizard', 'gengar', 'lugia', 'cresselia'];
 const myPokedex = new Pokedex();
+
+
 
 for (let i = 0; i < examplePokeArr.length; i += 1) {
   myPokedex.getPokemon(examplePokeArr[i]);
 }
+
+export { Pokedex, myPokedex, examplePokeArr };

@@ -1,5 +1,6 @@
 import { pokeCall } from './apiCall.js';
 import close from './cancel.png';
+import { Pokedex, myPokedex, examplePokeArr } from './index.js';
 
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ntSEDKBSp5jVB8zr1TJB/comments'
 
@@ -19,24 +20,24 @@ async function getCom() {
   return response.json();
 }
 
-const arr = ['pikachu', 'mewtwo', 'mew', 'ninetales', 'charizard', 'gengar', 'lugia', 'cresselia'];
 const commentWindow = document.getElementById('comment-window');
 
-const toggle = () => {
-  if (commentWindow.style.display === 'block') {
-    commentWindow.style.display = 'none';
+const toggle = (id) => {
+  const statsWindow = document.getElementById('comment-window');
+  console.log(statsWindow);
+  if (statsWindow.style.display === 'block') {
+    statsWindow.style.display = 'none';
+    statsWindow.innerHTML = '';
   } else {
-    commentWindow.style.display = 'block';
+    statsWindow.style.display = 'block';
+    displayPokemonStats(id);
   }
 }
 
 const displayPokemonStats = (e) => {
   pokeCall(e).then((poke) => {
-    console.log(poke)
-    console.log(poke.sprites.front_shiny)
     let pokeImg = poke.sprites.front_shiny;
     let pokeTypeOne = poke.types[0].type.name;
-    // let pokeTypeTwo = poke.types[1].type.name;
     let pokeName = poke.name;
     let pokeWeight = poke.weight;
     let pokeHeight = poke.height;
@@ -45,26 +46,17 @@ const displayPokemonStats = (e) => {
     const cancelImage = document.createElement('img');
     cancelImage.width = '48';
     cancelImage.src = close;
-
     const img  = document.createElement('img');
     img.src = pokeImg;
     img.width = '160';
-
     const name = document.createElement('h2');
     name.innerText = pokeName[0].toUpperCase() + pokeName.slice(1);
-
     const type = document.createElement('p');
     type.innerText = `Type: ${pokeTypeOne[0].toUpperCase() + pokeTypeOne.slice(1)}`;
-
-    // const type = document.createElement('p');
-    // type.innerText = `Type: ${pokeTypeTwo[1].toUpperCase() + pokeTypeOne.slice(1)}`;
-    
     const weight = document.createElement('p');
     weight.innerText = `Weight: ${pokeWeight} lbs`;
-    
     const height = document.createElement('p');
     height.innerText = `Height: ${pokeHeight} ft`;
-        
     const power = document.createElement('p');
     power.innerText = `Power: ${pokePower} pts`;
     
@@ -80,12 +72,5 @@ const displayPokemonStats = (e) => {
   });
 };
 
-for (let i = 0; i < arr.length; i++) {
-  displayPokemonStats(arr[i]);
-}
 
-const commentBtn = document.getElementById('comment-button');
-commentBtn.addEventListener('click', toggle);
-
-
-export { postCom, getCom };
+export { postCom, getCom, displayPokemonStats, toggle };
