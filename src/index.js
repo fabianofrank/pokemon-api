@@ -1,16 +1,17 @@
+/* eslint-disable max-classes-per-file */
 import './style.css';
 import { pokeCall } from './apiCall.js';
 
-class Pokecard {
-  constructor(name, img, weight, height, power, id) {
-    this.name = name;
-    this.img = img;
-    this.weight = weight;
-    this.height = height;
-    this.power = power;
-    this.id = id;
-  }
-}
+// class Pokecard {
+//   constructor(name, img, weight, height, power, id) {
+//     this.name = name;
+//     this.img = img;
+//     this.weight = weight;
+//     this.height = height;
+//     this.power = power;
+//     this.id = id;
+//   }
+// }
 
 class Pokedex {
   constructor() {
@@ -18,6 +19,7 @@ class Pokedex {
   }
 
   // Display Pokedex
+  // eslint-disable-next-line class-methods-use-this
   displayPokedex(pokemon) {
     const wrapper = document.getElementById('wrapper');
     wrapper.style.display = 'flex';
@@ -47,14 +49,6 @@ class Pokedex {
   // Gets pokemon info from API
   async getPokemon(e) {
     pokeCall(e).then((poke) => {
-      const currentPokeCard = new Pokecard(
-        poke.name,
-        poke.sprites.front_shiny,
-        poke.weight,
-        poke.height,
-        poke.base_experience,
-        poke.id
-      );
       this.displayPokedex(poke);
     });
   }
@@ -63,6 +57,6 @@ class Pokedex {
 const examplePokeArr = ['pikachu', 'mew', 'mewtwo', 'squirtle', 'bulbasaur', 'ivysaur', 'venusaur', 'charizard'];
 const myPokedex = new Pokedex();
 
-for (let i = 0; i < examplePokeArr.length; i++) {
+for (let i = 0; i < examplePokeArr.length; i += 1) {
   myPokedex.getPokemon(examplePokeArr[i]);
 }
