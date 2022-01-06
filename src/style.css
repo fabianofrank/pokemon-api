@@ -6,12 +6,14 @@
 body {
   background-color: #28292c;
   position: relative;
+
   /* height: 100vw; */
 }
 
-h2, h3 {
+h2,
+h3 {
   color: white;
-  margin: 12px 0 12px;
+  margin: 48px 0 12px;
 }
 
 #wrapper {
@@ -31,6 +33,12 @@ h2, h3 {
   height: 100vh;
   z-index: 1;
   background-color: #28292c;
+}
+
+.pokeContainer p {
+  margin: 0;
+  margin-top: -15px;
+  font-size: 2vw;
 }
 
 #stats-window p {
@@ -106,12 +114,6 @@ h2, h3 {
   color: aliceblue;
 }
 
-.pokeContainer p {
-  margin: 0;
-  margin-top: -15px;
-  font-size: 2vw;
-}
-
 .pokeContainer:hover {
   transform: scale(1.07);
 }
@@ -153,7 +155,8 @@ h2, h3 {
   height: 120px;
 }
 
-.btn, .send-comment {
+.btn,
+.send-comment {
   background: #7c7c7c;
   border-bottom: 3px inset rgba(0, 0, 0, 0.5);
   border-left: 3px inset rgba(0, 0, 0, 0.5);
