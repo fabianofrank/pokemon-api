@@ -1,8 +1,7 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable max-classes-per-file */
 import './style.css';
 import { pokeCall } from './apiCall.js';
-// import Pokeball from './pokeball.png';
+import { toggle } from './comments.js';
 
 // class Pokecard {
 //   constructor(name, img, weight, height, power, id) {
@@ -14,7 +13,6 @@ import { pokeCall } from './apiCall.js';
 //     this.id = id;
 //   }
 // }
-const examplePokeArr = ['pikachu', 'mewtwo', 'squirtle', 'bulbasaur', 'gengar', 'ivysaur', 'venusaur', 'charizard'];
 
 class Pokedex {
   constructor() {
@@ -34,6 +32,7 @@ class Pokedex {
     pokeFoto.classList.add('pokeFoto');
     pokeFoto.src = `${pokemon.sprites.front_shiny}`;
     const commentBttn = document.createElement('button');
+    commentBttn.onclick = () => toggle(pokemon.id);
     const reserveBttn = document.createElement('button');
     commentBttn.id = `commentBttn${pokemon.id}`;
     commentBttn.innerText = 'comment';
@@ -41,13 +40,8 @@ class Pokedex {
     reserveBttn.id = `reserveBttn${pokemon.id}`;
     reserveBttn.innerText = 'reservation';
     reserveBttn.classList.add('btn', 'secondary');
-    const likes = document.createElement('div');
-    const likeCounter = document.createElement('span');
-    likeCounter.innerHTML = '<img src="pokeball.png"/> (7)';
-    likes.appendChild(likeCounter);
     pokeContainer.appendChild(pokeFoto);
     pokeContainer.appendChild(nameTest);
-    pokeContainer.appendChild(likes);
     pokeContainer.appendChild(commentBttn);
     pokeContainer.appendChild(reserveBttn);
 
@@ -61,8 +55,12 @@ class Pokedex {
     });
   }
 }
+
+const examplePokeArr = ['pikachu', 'mewtwo', 'mew', 'ninetales', 'charizard', 'gengar', 'lugia', 'cresselia'];
 const myPokedex = new Pokedex();
 
 for (let i = 0; i < examplePokeArr.length; i += 1) {
   myPokedex.getPokemon(examplePokeArr[i]);
 }
+
+export { Pokedex, myPokedex, examplePokeArr };

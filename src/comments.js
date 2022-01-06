@@ -1,6 +1,8 @@
+/* eslint-disbale import/no-cycle no-unused-vars no-undef */
 import { pokeCall } from './apiCall.js';
 import close from './cancel.png';
 
+// Involment POST and GET
 const baseURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ntSEDKBSp5jVB8zr1TJB/comments';
 
 const postCom = async (e) => {
@@ -19,72 +21,70 @@ async function getCom() {
   return response.json();
 }
 
-const arr = ['pikachu', 'mewtwo', 'mew', 'ninetales', 'charizard', 'gengar', 'lugia', 'cresselia'];
+// Display Stats
 const commentWindow = document.getElementById('comment-window');
 
-const toggle = () => {
+const toggleClose = () => {
   if (commentWindow.style.display === 'block') {
     commentWindow.style.display = 'none';
-  } else {
-    commentWindow.style.display = 'block';
+    commentWindow.innerHTML = '';
   }
 };
 
 const displayPokemonStats = (e) => {
   pokeCall(e).then((poke) => {
-    // console.log(poke);
-    // console.log(poke.sprites.front_shiny);
     const pokeImg = poke.sprites.front_shiny;
     const pokeTypeOne = poke.types[0].type.name;
-    // let pokeTypeTwo = poke.types[1].type.name;
-    const pokeName = poke.name;
+    const pokeName = poke.name.toUpperCase();
     const pokeWeight = poke.weight;
     const pokeHeight = poke.height;
     const pokePower = poke.base_experience;
 
-    const cancelImage = document.createElement('img');
-    cancelImage.width = '48';
-    cancelImage.src = close;
+    let html = '';
+    const htmlSegment = `
+    <div id="stats-window">
+      <div id="stats-section">
+        <img src="${close}" id="close" width="48">
+        <img src="${pokeImg}" id="photo" width="160">
+      </div>
+      <h2>${pokeName}</h2>
+      <div id="type-div">
+        <p id="type-tex">${pokeTypeOne}</p>
+      </div>
+      <p>Weight: ${pokeWeight}</p>
+      <p>Height: ${pokeHeight}</p>
+      <p>Power: ${pokePower}</p>
+      <comments-section id="comment-section" class="comments-section">
+        <h3>Best Comments</h3>
+        <div class="container"></div>
+        <ul class="comments-list" style="display: none;"></ul>
+        <h3>Add your comment</h3>
+        <form class="form-class">
+          <input class="input-name" placeholder="Your name" required="">
+          <textarea class="input-text" placeholder="Your comment" required=""></textarea>
+          <button type="submit" class="send-comment">Send your comment</button>
+        </form>
+      </comments-section>
+    </div>
+    `;
+    html += htmlSegment;
+    commentWindow.innerHTML = html;
 
-    const img = document.createElement('img');
-    img.src = pokeImg;
-    img.width = '160';
-
-    const name = document.createElement('h2');
-    name.innerText = pokeName[0].toUpperCase() + pokeName.slice(1);
-
-    const type = document.createElement('p');
-    type.innerText = `Type: ${pokeTypeOne[0].toUpperCase() + pokeTypeOne.slice(1)}`;
-
-    // const type = document.createElement('p');
-    // type.innerText = `Type: ${pokeTypeTwo[1].toUpperCase() + pokeTypeOne.slice(1)}`;
-
-    const weight = document.createElement('p');
-    weight.innerText = `Weight: ${pokeWeight} lbs`;
-
-    const height = document.createElement('p');
-    height.innerText = `Height: ${pokeHeight} ft`;
-
-    const power = document.createElement('p');
-    power.innerText = `Power: ${pokePower} pts`;
-
-    commentWindow.appendChild(img);
-    commentWindow.appendChild(cancelImage);
-    commentWindow.appendChild(name);
-    commentWindow.appendChild(type);
-    commentWindow.appendChild(weight);
-    commentWindow.appendChild(height);
-    commentWindow.appendChild(power);
-
-    cancelImage.addEventListener('click', toggle);
+    document.getElementById('close').addEventListener('click', toggleClose);
   });
 };
 
-for (let i = 0; i < arr.length; i += 1) {
-  displayPokemonStats(arr[i]);
-}
+// Toggle: open/close each card
+const toggle = (id) => {
+  if (commentWindow.style.display === 'none') {
+    commentWindow.style.display = 'block';
+    displayPokemonStats(id);
+  } else {
+    commentWindow.style.display = 'none';
+    commentWindow.innerHTML = '';
+  }
+};
 
-const commentBtn = document.getElementById('comment-button');
-commentBtn.addEventListener('click', toggle);
-
-export { postCom, getCom };
+export {
+  postCom, getCom, displayPokemonStats, toggle,
+};
