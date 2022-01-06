@@ -20,6 +20,8 @@ h3 {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
 }
 
 #stats-window {
@@ -103,19 +105,53 @@ h3 {
   margin: 12px 0 12px;
 }
 
+/* TODO: make changes by moving the buttons down, bigger/other fonts */
 .pokeContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 150px;
-  height: 250px;
+  height: 300px;
+
+  /* border-bottom: 10px inset rgba(0, 0, 0, 0.5);
+  border-left: 10px inset rgba(0, 0, 0, 0.5);
+  border-right: 10px inset rgba(255, 255, 255, 0.5);
+  border-top: 10px inset rgba(255, 255, 255, 0.5); */
   border-radius: 15px;
   margin: 5px;
   color: aliceblue;
 }
 
+.pokeContainer p {
+  margin: 5px;
+  margin-top: -15px;
+  font-size: 15px;
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+footer span {
+  background-color: inherit;
+  margin: 0;
+  padding-left: 40px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.pokeContainer span {
+  color: rgb(255, 241, 240);
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 10px;
+  margin: 0;
+}
+
+.pokeContainer div {
+  height: 10px;
+  margin: 0;
+  margin-bottom: -8px;
+}
+
 .pokeContainer:hover {
-  transform: scale(1.07);
+  transform: scale(1.05);
 }
 
 .pikachu {
@@ -124,6 +160,8 @@ h3 {
 
 .mew {
   background-color: rgb(229, 189, 255);
+.gengar {
+  background-color: rgb(58, 82, 177);
 }
 
 .mewtwo {
@@ -166,7 +204,7 @@ h3 {
   color: white;
   cursor: pointer;
   display: inline-block;
-  font-size: 0.9vw;
+  font-size: 6px;
   margin: 10px;
   min-width: 90px;
   padding: 0.1rem;
@@ -177,6 +215,10 @@ h3 {
 .btn.primary {
   background: #005800;
   margin-bottom: -5px;
+}
+
+.btn.primary:hover {
+  background: #098509;
 }
 
 .btn.secondary {
@@ -190,8 +232,75 @@ h3 {
   max-height: 10vh;
   min-height: 5vh;
   align-self: center;
+  
+.btn.secondary:hover {
+  background: #3d3dac;
 }
 
 #comment-window {
   display: none;
+}
+
+header {
+  height: 250px;
+  background-image: url(banner.jpg);
+  background-repeat: no-repeat;
+  background-size: 400px;
+  background-color: #a2e8ff;
+  background-position: 80% 50%;
+  border-bottom: 10px inset rgba(0, 0, 0, 0.5);
+  border-left: 10px inset rgba(0, 0, 0, 0.5);
+  border-right: 10px inset rgba(255, 255, 255, 0.5);
+  border-top: 10px inset rgba(255, 255, 255, 0.5);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  font-family: 'Press Start 2P', sans-serif;
+  padding-left: 5%;
+}
+
+nav {
+  padding-top: 10px;
+}
+
+a {
+  color: #28292c;
+  line-height: 25px;
+}
+
+li {
+  margin-right: 20px;
+}
+
+h1 {
+  font-family: 'Press Start 2P', sans-serif;
+  margin-left: 7%;
+  margin-top: 2%;
+  line-height: 5vw;
+  font-size: 3.9vw;
+}
+
+#logoContainer {
+  border: solid 2px red;
+  width: 50px;
+  height: 50px;
+}
+
+footer {
+  background-color: #46646c;
+  color: aliceblue;
+  height: 70px;
+  margin-top: 50px;
+  font-family: 'Press Start 2P', sans-serif;
+  padding-top: 5%;
+  border-bottom: 10px inset rgba(0, 0, 0, 0.5);
+  border-left: 10px inset rgba(0, 0, 0, 0.5);
+  border-right: 10px inset rgba(255, 255, 255, 0.5);
+  border-top: 10px inset rgba(255, 255, 255, 0.5);
+  display: flex;
+  text-align: center;
 }
