@@ -1,11 +1,98 @@
+* {
+  margin: 0;
+  font-family: 'Press Start 2P', sans-serif;
+}
+
 body {
   background-color: #28292c;
+  position: relative;
+  /* height: 100vw; */
+}
+
+h2, h3 {
+  color: white;
+  margin: 12px 0 12px;
 }
 
 #wrapper {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+}
+
+#stats-window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: #28292c;
+}
+
+#stats-window p {
+  color: white;
+  margin: 12px 0 0 12px;
+}
+
+#stats-section {
+  position: relative;
+  background-color: tomato;
+  border-radius: 0 0 30px 30px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#comment-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 96px 0 0 0;
+}
+
+#close {
+  align-self: flex-end;
+  position: absolute;
+  margin: 24px;
+}
+
+#photo {
+  width: 20vw;
+}
+
+#type-tex {
+  background-color: #8a0029;
+  border-radius: 30px;
+  padding: 6px;
+}
+
+.form-class {
+  display: flex;
+  flex-direction: column;
+  max-width: 50vw;
+}
+
+.form-class input {
+  margin: 12px 0 12px;
+  font-size: 1vw;
+  max-height: 5vh;
+  min-height: 2.5vh;
+}
+
+.form-class textarea {
+  margin: 12px 0 12px;
+  font-size: 1vw;
+  max-height: 10vh;
+  min-height: 5vh;
+}
+
+.form-class button {
+  margin: 12px 0 12px;
 }
 
 .pokeContainer {
@@ -23,7 +110,6 @@ body {
   margin: 0;
   margin-top: -15px;
   font-size: 2vw;
-  font-family: 'Press Start 2P', sans-serif;
 }
 
 .pokeContainer:hover {
@@ -67,7 +153,7 @@ body {
   height: 120px;
 }
 
-.btn {
+.btn, .send-comment {
   background: #7c7c7c;
   border-bottom: 3px inset rgba(0, 0, 0, 0.5);
   border-left: 3px inset rgba(0, 0, 0, 0.5);
@@ -92,6 +178,15 @@ body {
 
 .btn.secondary {
   background: #0000bc;
+}
+
+.send-comment {
+  background: #ff4b81;
+  font-size: 0.9vw;
+  width: 30vw;
+  max-height: 10vh;
+  min-height: 5vh;
+  align-self: center;
 }
 
 #comment-window {
