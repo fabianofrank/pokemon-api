@@ -1,5 +1,12 @@
 body {
   background-color: #28292c;
+  position: relative;
+}
+
+h2,
+h3 {
+  color: white;
+  margin: 48px 0 12px;
 }
 
 #wrapper {
@@ -73,12 +80,16 @@ footer span {
   background-color: #c4a369;
 }
 
-.mewtwo {
-  background-color: rgb(96, 70, 162);
+.mew {
+  background-color: rgb(229, 189, 255);
 }
 
 .gengar {
-  background-color: rgb(90, 78, 116);
+  background-color: rgb(58, 82, 177);
+}
+
+.mewtwo {
+  background-color: rgb(96, 70, 162);
 }
 
 .ninetales {
@@ -87,10 +98,6 @@ footer span {
 
 .cresselia {
   background-color: #66b2b3;
-}
-
-.mew {
-  background-color: #9f677b;
 }
 
 .charizard {
@@ -136,6 +143,15 @@ footer span {
 
 .btn.secondary {
   background: rgb(58, 46, 140);
+}
+
+.send-comment {
+  background: #ff4b81;
+  font-size: 0.9vw;
+  width: 30vw;
+  max-height: 10vh;
+  min-height: 5vh;
+  align-self: center;
 }
 
 .btn.secondary:hover {
