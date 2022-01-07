@@ -17,6 +17,8 @@ import Heart from './heart.png';
 
 const logoWrapper = document.getElementById('logo');
 logoWrapper.src = `${Pokeball}`;
+const itemCounterWrapper = document.getElementById('itemCounterWrapper');
+const wrapper = document.getElementById('wrapper');
 
 // Get likes
 const fetchLikes = async (id) => {
@@ -51,7 +53,6 @@ class Pokedex {
   // Display Pokedex
   // eslint-disable-next-line class-methods-use-this
   displayPokedex(pokemon) {
-    const wrapper = document.getElementById('wrapper');
     wrapper.style.display = 'flex';
     const pokeContainer = document.createElement('div');
     pokeContainer.classList.add('pokeContainer', `${pokemon.name}`);
@@ -125,6 +126,7 @@ const initLikes = async () => {
   const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ntSEDKBSp5jVB8zr1TJB/likes';
   const response = await fetch(url, { method: 'GET' });
   const data = await response.json();
+  itemCounterWrapper.innerText = `(${wrapper.childElementCount})`;
   for (let i = 0; i < data.length; i += 1) {
     const currentLikeInitID = data[i].item_id;
     const currentLikeInitCounter = document.getElementById(
@@ -139,4 +141,6 @@ const initLikes = async () => {
 
 initLikes();
 
-export { Pokedex, myPokedex, examplePokeArr };
+export {
+  Pokedex, myPokedex, examplePokeArr, wrapper, itemCounterWrapper,
+};
