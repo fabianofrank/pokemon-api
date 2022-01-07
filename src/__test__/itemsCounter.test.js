@@ -1,5 +1,16 @@
-const sum = require('./itemsCounter.js');
+/**
+ * @jest-environment jsdom
+ */
+const { itemCounter } = require('./itemsCounter.js');
+const { mockWrapper } = require('./itemsCounter.js');
+const { itemCounterWrapper } = require('./itemsCounter.js');
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(3);
+test('Counts items  in wrapper and sets value in itemCounterWrapper', () => {
+  const pokemonItems = 5;
+  for (let i = 0; i < pokemonItems; i += 1) {
+    const testPokeCard = document.createElement('div');
+    mockWrapper.appendChild(testPokeCard);
+  }
+  itemCounter();
+  expect(itemCounterWrapper.innerText).toBe('(5)');
 });

@@ -1,4 +1,14 @@
-function sum(a, b) {
-  return a + b;
+/**
+ * @jest-environment jsdom
+ */
+
+const mockWrapper = document.createElement('div');
+const itemCounterWrapper = document.createElement('span');
+
+function itemCounter() {
+  itemCounterWrapper.innerText = `(${mockWrapper.childElementCount})`;
 }
-module.exports = sum;
+
+exports.mockWrapper = mockWrapper;
+exports.itemCounterWrapper = itemCounterWrapper;
+exports.itemCounter = itemCounter;
