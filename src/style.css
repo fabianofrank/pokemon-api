@@ -6,8 +6,6 @@
 body {
   background-color: #28292c;
   position: relative;
-
-  /* height: 100vw; */
 }
 
 h2,
@@ -160,6 +158,8 @@ footer span {
 
 .mew {
   background-color: rgb(229, 189, 255);
+}
+
 .gengar {
   background-color: rgb(58, 82, 177);
 }
@@ -232,7 +232,8 @@ footer span {
   max-height: 10vh;
   min-height: 5vh;
   align-self: center;
-  
+}
+
 .btn.secondary:hover {
   background: #3d3dac;
 }
