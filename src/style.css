@@ -1,8 +1,3 @@
-* {
-  margin: 0;
-  font-family: 'Press Start 2P', sans-serif;
-}
-
 body {
   background-color: #28292c;
   position: relative;
@@ -22,6 +17,7 @@ h3 {
   justify-content: center;
 }
 
+<<<<<<< HEAD
 #stats-window {
   position: absolute;
   display: flex;
@@ -104,23 +100,45 @@ h3 {
   margin: 12px 0 12px;
 }
 
+=======
+>>>>>>> f1b3e3313802c11536cd10d57ebdaef7a62fa010
 /* TODO: make changes by moving the buttons down, bigger/other fonts */
 .pokeContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 150px;
-  height: 300px;
-
-  /* border-bottom: 10px inset rgba(0, 0, 0, 0.5);
+  width: 250px;
+  height: 250px;
+  border-bottom: 10px inset rgba(0, 0, 0, 0.5);
   border-left: 10px inset rgba(0, 0, 0, 0.5);
   border-right: 10px inset rgba(255, 255, 255, 0.5);
-  border-top: 10px inset rgba(255, 255, 255, 0.5); */
+  border-top: 10px inset rgba(255, 255, 255, 0.5);
   border-radius: 15px;
   margin: 5px;
   color: aliceblue;
+  transition: 0.5s;
 }
 
+<<<<<<< HEAD
+=======
+.pokeContainer p {
+  margin: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: -15px;
+  font-size: 22px;
+  height: 30px;
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+.pokeContainer img {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+>>>>>>> f1b3e3313802c11536cd10d57ebdaef7a62fa010
 footer span {
   background-color: inherit;
   margin: 0;
@@ -147,7 +165,7 @@ footer span {
 }
 
 .pikachu {
-  background-color: #ffcb71;
+  background-color: #c4a369;
 }
 
 .mew {
@@ -156,26 +174,36 @@ footer span {
 
 .gengar {
   background-color: rgb(58, 82, 177);
-}
 
 .mewtwo {
-  background-color: rgb(179, 179, 255);
+  background-color: rgb(96, 70, 162);
 }
 
-.lugia {
-  background-color: #5c38ff;
+<<<<<<< HEAD
+=======
+.gengar {
+  background-color: rgb(90, 78, 116);
 }
 
+>>>>>>> f1b3e3313802c11536cd10d57ebdaef7a62fa010
 .ninetales {
-  background-color: #ff4b81;
-}
-
-.charizard {
-  background-color: #f8a060;
+  background-color: #6784a8;
 }
 
 .cresselia {
-  background-color: #c976f8;
+  background-color: #66b2b3;
+}
+
+.mew {
+  background-color: #9f677b;
+}
+
+.charizard {
+  background-color: #d08c5b;
+}
+
+.lugia {
+  background-color: #485c99;
 }
 
 .pokeFoto {
@@ -183,8 +211,7 @@ footer span {
   height: 120px;
 }
 
-.btn,
-.send-comment {
+.btn {
   background: #7c7c7c;
   border-bottom: 3px inset rgba(0, 0, 0, 0.5);
   border-left: 3px inset rgba(0, 0, 0, 0.5);
@@ -194,25 +221,26 @@ footer span {
   color: white;
   cursor: pointer;
   display: inline-block;
-  font-size: 6px;
-  margin: 10px;
+  font-size: 11px;
+  margin-left: 5px;
+  margin-right: 5px;
   min-width: 90px;
-  padding: 0.1rem;
-  width: auto;
+  width: 100px;
+  height: 60px;
   font-family: 'Press Start 2P', sans-serif;
+  border-radius: 11px;
 }
 
 .btn.primary {
-  background: #005800;
-  margin-bottom: -5px;
+  background: #158522;
 }
 
 .btn.primary:hover {
-  background: #098509;
+  background: #3a933a;
 }
 
 .btn.secondary {
-  background: #0000bc;
+  background: rgb(58, 46, 140);
 }
 
 .send-comment {
@@ -238,20 +266,22 @@ header {
   background-repeat: no-repeat;
   background-size: 400px;
   background-color: #a2e8ff;
-  background-position: 80% 50%;
+  background-position: 90% 50%;
   border-bottom: 10px inset rgba(0, 0, 0, 0.5);
   border-left: 10px inset rgba(0, 0, 0, 0.5);
   border-right: 10px inset rgba(255, 255, 255, 0.5);
   border-top: 10px inset rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 60%;
   font-family: 'Press Start 2P', sans-serif;
-  padding-left: 5%;
+  padding-left: 3%;
+  margin-bottom: 0;
 }
 
 nav {
@@ -269,16 +299,16 @@ li {
 
 h1 {
   font-family: 'Press Start 2P', sans-serif;
-  margin-left: 7%;
-  margin-top: 2%;
+  margin-left: 20%;
+  margin-top: -45px;
   line-height: 5vw;
-  font-size: 3.9vw;
+  font-size: 3vw;
 }
 
 #logoContainer {
-  border: solid 2px red;
-  width: 50px;
-  height: 50px;
+  width: 90px;
+  height: 90px;
+  filter: contrast(4);
 }
 
 footer {
@@ -294,4 +324,31 @@ footer {
   border-top: 10px inset rgba(255, 255, 255, 0.5);
   display: flex;
   text-align: center;
+  border-radius: 15px;
+}
+
+.likesContainer {
+  position: absolute;
+  margin-right: 160px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 50px;
+}
+
+.likesContainer img {
+  width: 25px;
+  margin-left: 2px;
+  margin-bottom: 10px;
+  transition: 0.2s;
+  filter: contrast(1.2);
+}
+
+.likesContainer img:hover {
+  transform: scale(1.5);
+}
+
+.likesContainer:active {
+  filter: contrast(4);
 }

@@ -36,7 +36,7 @@ async function getCom(e) {
 
 const commentWindow = document.getElementById('comment-window');
 
-// Close POPUP
+// POPUP Close
 const toggleClose = () => {
   if (commentWindow.style.display === 'block') {
     commentWindow.style.display = 'none';
@@ -44,7 +44,7 @@ const toggleClose = () => {
   }
 };
 
-// Render Stats
+// RENDER Stats
 const renderPokemonStats = (poke) => {
   const pokeImg = poke.sprites.front_shiny;
   const pokeTypeOne = poke.types[0].type.name;
@@ -134,7 +134,7 @@ const displayPokemonStats = (e) => {
   });
 };
 
-// Open POPUP
+// OPEN POPUP
 const toggle = (id) => {
   if (commentWindow.style.display === 'none') {
     commentWindow.style.display = 'block';
