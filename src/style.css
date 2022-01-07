@@ -1,3 +1,11 @@
+* {
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: #28292c;
   position: relative;
@@ -17,7 +25,105 @@ h3 {
   justify-content: center;
 }
 
-/* TODO: make changes by moving the buttons down, bigger/other fonts */
+#stats-window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  margin-left: -10px;
+  background-color: #28292c;
+}
+
+.pokeContainer p {
+  margin: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: -15px;
+  font-size: 22px;
+  height: 30px;
+}
+
+.comments-list p {
+  font-size: 12px;
+}
+
+.form-class p {
+  font-size: 12px;
+}
+
+#stats-window p {
+  color: white;
+  margin: 12px 0 0 12px;
+}
+
+#stats-section {
+  background-color: tomato;
+  color: aliceblue;
+  font-family: 'Press Start 2P', sans-serif;
+  padding-top: 5%;
+  border-bottom: 10px inset rgba(0, 0, 0, 0.5);
+  border-left: 10px inset rgba(0, 0, 0, 0.5);
+  border-right: 10px inset rgba(255, 255, 255, 0.5);
+  border-top: 10px inset rgba(255, 255, 255, 0.5);
+  display: flex;
+  width: 96vw;
+  border-radius: 15px;
+  flex-direction: column;
+  align-items: center;
+}
+
+#comment-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#close {
+  align-self: flex-end;
+  position: absolute;
+  margin: 24px;
+  top: 0;
+}
+
+#photo {
+  width: 20vw;
+}
+
+#type-tex {
+  background-color: #8a0029;
+  border-radius: 30px;
+  padding: 6px;
+}
+
+.comment-header {
+  display: flex;
+  align-items: baseline;
+}
+
+.form-class {
+  display: flex;
+  flex-direction: column;
+
+  /* align-items: center; */
+}
+
+.form-class input {
+  margin-top: 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  height: 24px;
+}
+
+.form-class textarea {
+  margin-top: 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  height: 48px;
+}
+
 .pokeContainer {
   display: flex;
   flex-wrap: wrap;
@@ -32,16 +138,6 @@ h3 {
   margin: 5px;
   color: aliceblue;
   transition: 0.5s;
-}
-
-.pokeContainer p {
-  margin: 0;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: -15px;
-  font-size: 22px;
-  height: 30px;
-  font-family: 'Press Start 2P', sans-serif;
 }
 
 .pokeContainer img {
@@ -113,7 +209,8 @@ footer span {
   height: 120px;
 }
 
-.btn {
+.btn,
+.send-comment {
   background: #7c7c7c;
   border-bottom: 3px inset rgba(0, 0, 0, 0.5);
   border-left: 3px inset rgba(0, 0, 0, 0.5);
@@ -147,11 +244,12 @@ footer span {
 
 .send-comment {
   background: #ff4b81;
-  font-size: 0.9vw;
+  font-size: 2vw;
   width: 30vw;
   max-height: 10vh;
   min-height: 5vh;
   align-self: center;
+  margin-top: 12px;
 }
 
 .btn.secondary:hover {
@@ -160,6 +258,7 @@ footer span {
 
 #comment-window {
   display: none;
+  background-color: #28292c;
 }
 
 header {

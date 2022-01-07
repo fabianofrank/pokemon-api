@@ -27,10 +27,10 @@ const postAsync = async (method, query, bodyObj) => {
   return response.json();
 };
 
-const postComment = (commentObj) => postAsync('POST', 'comments', commentObj);
+const postComment = (commentObj) => postAsync('POST', 'reservations', commentObj);
 
 async function getCom(e) {
-  const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ntSEDKBSp5jVB8zr1TJB/comments?item_id=${e}`);
+  const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ntSEDKBSp5jVB8zr1TJB/reservations?item_id=${e}`);
   return response.json();
 }
 
@@ -70,15 +70,18 @@ const renderPokemonStats = (poke) => {
     <p>Power: ${pokePower}</p>
     <comments-section id="comment-section" class="comments-section">
       <div class="comment-header">
-        <h3>Best Comments</h3>
-        <p id="comment"></p>
+        <h3>Adoptions</h3>
+        <p id="adopt"></p>
       </div>
       <div class="comments-list"></div>
-      <h3>Add your comment</h3>
+      <h3>Schedule your adoption</h3>
       <form class="form-class">
         <input class="input-name" placeholder="Your name" required="">
-        <textarea class="input-text" placeholder="Your comment" required=""></textarea>
-        <button type="button" class="send-comment">Send your comment</button>
+        <p>Traning Start</p>
+        <input type="date" class="input-start" placeholder="When will you meet your Pokemon?" required="">
+        <p>Traning Finished</p>
+        <input type="date" class="input-end" placeholder="When will you meet your Pokemon?" required="">
+        <button type="button" class="send-comment">Book your adoption</button>
       </form>
     </comments-section>
   </div>
@@ -88,7 +91,7 @@ const renderPokemonStats = (poke) => {
 
   // COUNTER
   const counter = (serverData) => {
-    const adopt = document.querySelector('#comment');
+    const adopt = document.querySelector('#adopt');
     adopt.innerHTML = `(${serverData.length})`;
   };
 
@@ -96,11 +99,11 @@ const renderPokemonStats = (poke) => {
   const getComment = (e) => {
     getCom(e)
       .then((serverData) => {
-        counter(serverData);
         let html = '';
         if (typeof serverData === 'object') {
+          counter(serverData);
           serverData.forEach((data) => {
-            const htmlSegment = `<p>${data.comment}</br>${data.creation_date}: ${data.username}</p>`;
+            const htmlSegment = `<p>${data.date_start} - ${data.date_end} by ${data.username}</p>`;
             html += htmlSegment;
           });
         } else if (typeof serverData === 'object' && serverData.error.status === 400) {
@@ -120,14 +123,16 @@ const renderPokemonStats = (poke) => {
   };
 
   // CLICK EVENT
-  const comment = document.querySelector('.input-text');
+  const start = document.querySelector('.input-start');
+  const end = document.querySelector('.input-end');
   const name = document.querySelector('.input-name');
 
   const handleClick = async () => {
     const bodyObj = {
       item_id: poke.id,
       username: name.value,
-      comment: comment.value,
+      date_start: start.value,
+      date_end: end.value,
     };
     postComment(bodyObj).then(() => {
       renderComment(poke.id);
@@ -146,7 +151,7 @@ const displayPokemonStats = (e) => {
 };
 
 // OPEN POPUP
-const toggle = (id) => {
+const adoptToggle = (id) => {
   if (commentWindow.style.display === 'none') {
     commentWindow.style.display = 'block';
     document.querySelector('#wrapper').style.visibility = 'hidden';
@@ -158,5 +163,5 @@ const toggle = (id) => {
 };
 
 export {
-  postCom, getCom, displayPokemonStats, toggle,
+  postCom, getCom, displayPokemonStats, adoptToggle,
 };

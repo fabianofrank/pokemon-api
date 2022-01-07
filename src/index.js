@@ -1,6 +1,7 @@
 import './style.css';
 import { pokeCall } from './apiCall.js';
 import { toggle } from './comments.js';
+import { adoptToggle } from './adoptions.js';
 import Pokeball from './pokeball.png';
 import Heart from './heart.png';
 
@@ -64,6 +65,7 @@ class Pokedex {
     const commentBttn = document.createElement('button');
     commentBttn.onclick = () => toggle(pokemon.id);
     const reserveBttn = document.createElement('button');
+    reserveBttn.onclick = () => adoptToggle(pokemon.id);
     commentBttn.id = `commentBttn${pokemon.id}`;
     commentBttn.innerText = 'comment';
     commentBttn.classList.add('btn', 'primary');
