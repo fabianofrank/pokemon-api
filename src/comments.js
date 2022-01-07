@@ -33,7 +33,7 @@ const toggleClose = () => {
 
 const displayPokemonStats = (e) => {
   pokeCall(e).then((poke) => {
-    const pokeImg = poke.sprites.front_shiny;
+    const pokeImg = poke.sprites.front_default;
     const pokeTypeOne = poke.types[0].type.name;
     const pokeName = poke.name.toUpperCase();
     const pokeWeight = poke.weight;

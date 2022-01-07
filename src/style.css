@@ -1,19 +1,5 @@
-* {
-  margin: 0;
-  font-family: 'Press Start 2P', sans-serif;
-}
-
 body {
   background-color: #28292c;
-  position: relative;
-
-  /* height: 100vw; */
-}
-
-h2,
-h3 {
-  color: white;
-  margin: 48px 0 12px;
 }
 
 #wrapper {
@@ -24,109 +10,38 @@ h3 {
   justify-content: center;
 }
 
-#stats-window {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  background-color: #28292c;
-}
-
-.pokeContainer p {
-  margin: 0;
-  margin-top: -15px;
-  font-size: 2vw;
-}
-
-#stats-window p {
-  color: white;
-  margin: 12px 0 0 12px;
-}
-
-#stats-section {
-  position: relative;
-  background-color: tomato;
-  border-radius: 0 0 30px 30px;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#comment-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 96px 0 0 0;
-}
-
-#close {
-  align-self: flex-end;
-  position: absolute;
-  margin: 24px;
-}
-
-#photo {
-  width: 20vw;
-}
-
-#type-tex {
-  background-color: #8a0029;
-  border-radius: 30px;
-  padding: 6px;
-}
-
-.form-class {
-  display: flex;
-  flex-direction: column;
-  max-width: 50vw;
-}
-
-.form-class input {
-  margin: 12px 0 12px;
-  font-size: 1vw;
-  max-height: 5vh;
-  min-height: 2.5vh;
-}
-
-.form-class textarea {
-  margin: 12px 0 12px;
-  font-size: 1vw;
-  max-height: 10vh;
-  min-height: 5vh;
-}
-
-.form-class button {
-  margin: 12px 0 12px;
-}
-
 /* TODO: make changes by moving the buttons down, bigger/other fonts */
 .pokeContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 150px;
-  height: 300px;
-
-  /* border-bottom: 10px inset rgba(0, 0, 0, 0.5);
+  width: 250px;
+  height: 250px;
+  border-bottom: 10px inset rgba(0, 0, 0, 0.5);
   border-left: 10px inset rgba(0, 0, 0, 0.5);
   border-right: 10px inset rgba(255, 255, 255, 0.5);
-  border-top: 10px inset rgba(255, 255, 255, 0.5); */
+  border-top: 10px inset rgba(255, 255, 255, 0.5);
   border-radius: 15px;
   margin: 5px;
   color: aliceblue;
+  transition: 0.5s;
 }
 
 .pokeContainer p {
-  margin: 5px;
+  margin: 0;
+  margin-left: 15px;
+  margin-right: 15px;
   margin-top: -15px;
-  font-size: 15px;
+  font-size: 22px;
+  height: 30px;
   font-family: 'Press Start 2P', sans-serif;
+}
+
+.pokeContainer img {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 footer span {
@@ -155,37 +70,35 @@ footer span {
 }
 
 .pikachu {
-  background-color: #ffcb71;
-}
-
-.mew {
-  background-color: rgb(229, 189, 255);
-.gengar {
-  background-color: rgb(58, 82, 177);
+  background-color: #c4a369;
 }
 
 .mewtwo {
-  background-color: rgb(179, 179, 255);
-}
-
-.lugia {
-  background-color: #5c38ff;
+  background-color: rgb(96, 70, 162);
 }
 
 .gengar {
-  background-color: #71b7c7;
+  background-color: rgb(90, 78, 116);
 }
 
 .ninetales {
-  background-color: #ff4b81;
-}
-
-.charizard {
-  background-color: #f8a060;
+  background-color: #6784a8;
 }
 
 .cresselia {
-  background-color: #c976f8;
+  background-color: #66b2b3;
+}
+
+.mew {
+  background-color: #9f677b;
+}
+
+.charizard {
+  background-color: #d08c5b;
+}
+
+.lugia {
+  background-color: #485c99;
 }
 
 .pokeFoto {
@@ -193,8 +106,7 @@ footer span {
   height: 120px;
 }
 
-.btn,
-.send-comment {
+.btn {
   background: #7c7c7c;
   border-bottom: 3px inset rgba(0, 0, 0, 0.5);
   border-left: 3px inset rgba(0, 0, 0, 0.5);
@@ -204,35 +116,28 @@ footer span {
   color: white;
   cursor: pointer;
   display: inline-block;
-  font-size: 6px;
-  margin: 10px;
+  font-size: 11px;
+  margin-left: 5px;
+  margin-right: 5px;
   min-width: 90px;
-  padding: 0.1rem;
-  width: auto;
+  width: 100px;
+  height: 60px;
   font-family: 'Press Start 2P', sans-serif;
+  border-radius: 11px;
 }
 
 .btn.primary {
-  background: #005800;
-  margin-bottom: -5px;
+  background: #158522;
 }
 
 .btn.primary:hover {
-  background: #098509;
+  background: #3a933a;
 }
 
 .btn.secondary {
-  background: #0000bc;
+  background: rgb(58, 46, 140);
 }
 
-.send-comment {
-  background: #ff4b81;
-  font-size: 0.9vw;
-  width: 30vw;
-  max-height: 10vh;
-  min-height: 5vh;
-  align-self: center;
-  
 .btn.secondary:hover {
   background: #3d3dac;
 }
@@ -247,20 +152,22 @@ header {
   background-repeat: no-repeat;
   background-size: 400px;
   background-color: #a2e8ff;
-  background-position: 80% 50%;
+  background-position: 90% 50%;
   border-bottom: 10px inset rgba(0, 0, 0, 0.5);
   border-left: 10px inset rgba(0, 0, 0, 0.5);
   border-right: 10px inset rgba(255, 255, 255, 0.5);
   border-top: 10px inset rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 60%;
   font-family: 'Press Start 2P', sans-serif;
-  padding-left: 5%;
+  padding-left: 3%;
+  margin-bottom: 0;
 }
 
 nav {
@@ -278,16 +185,16 @@ li {
 
 h1 {
   font-family: 'Press Start 2P', sans-serif;
-  margin-left: 7%;
-  margin-top: 2%;
+  margin-left: 20%;
+  margin-top: -45px;
   line-height: 5vw;
-  font-size: 3.9vw;
+  font-size: 3vw;
 }
 
 #logoContainer {
-  border: solid 2px red;
-  width: 50px;
-  height: 50px;
+  width: 90px;
+  height: 90px;
+  filter: contrast(4);
 }
 
 footer {
@@ -303,4 +210,31 @@ footer {
   border-top: 10px inset rgba(255, 255, 255, 0.5);
   display: flex;
   text-align: center;
+  border-radius: 15px;
+}
+
+.likesContainer {
+  position: absolute;
+  margin-right: 160px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 50px;
+}
+
+.likesContainer img {
+  width: 25px;
+  margin-left: 2px;
+  margin-bottom: 10px;
+  transition: 0.2s;
+  filter: contrast(1.2);
+}
+
+.likesContainer img:hover {
+  transform: scale(1.5);
+}
+
+.likesContainer:active {
+  filter: contrast(4);
 }
