@@ -41,12 +41,13 @@ const toggleClose = () => {
   if (commentWindow.style.display === 'block') {
     commentWindow.style.display = 'none';
     commentWindow.innerHTML = '';
+    document.querySelector('#wrapper').style.visibility = 'visible';
   }
 };
 
 // RENDER Stats
 const renderPokemonStats = (poke) => {
-  const pokeImg = poke.sprites.front_shiny;
+  const pokeImg = poke.sprites.front_default;
   const pokeTypeOne = poke.types[0].type.name;
   const pokeName = poke.name.toUpperCase();
   const pokeWeight = poke.weight;
@@ -68,7 +69,10 @@ const renderPokemonStats = (poke) => {
     <p>Height: ${pokeHeight}</p>
     <p>Power: ${pokePower}</p>
     <comments-section id="comment-section" class="comments-section">
-      <h3>Adoptions</h3><p id="adopt"></p>
+      <div class="comment-header">
+        <h3>Adoptions</h3>
+        <p id="adopt"></p>
+      </div>
       <div class="comments-list"></div>
       <h3>Schedule your adoption</h3>
       <form class="form-class">
@@ -89,7 +93,7 @@ const renderPokemonStats = (poke) => {
   const counter = (serverData) => {
     const adopt = document.querySelector('#adopt');
     adopt.innerHTML = `(${serverData.length})`;
-  }
+  };
 
   // GET and DISPLAY comments
   const getComment = (e) => {
@@ -128,7 +132,7 @@ const renderPokemonStats = (poke) => {
       item_id: poke.id,
       username: name.value,
       date_start: start.value,
-      date_end: end.value
+      date_end: end.value,
     };
     postComment(bodyObj).then(() => {
       renderComment(poke.id);
@@ -150,6 +154,7 @@ const displayPokemonStats = (e) => {
 const adoptToggle = (id) => {
   if (commentWindow.style.display === 'none') {
     commentWindow.style.display = 'block';
+    document.querySelector('#wrapper').style.visibility = 'hidden';
     displayPokemonStats(id);
   } else {
     commentWindow.style.display = 'none';

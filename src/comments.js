@@ -41,12 +41,13 @@ const toggleClose = () => {
   if (commentWindow.style.display === 'block') {
     commentWindow.style.display = 'none';
     commentWindow.innerHTML = '';
+    document.querySelector('#wrapper').style.visibility = 'visible';
   }
 };
 
 // RENDER Stats
 const renderPokemonStats = (poke) => {
-  const pokeImg = poke.sprites.front_shiny;
+  const pokeImg = poke.sprites.front_default;
   const pokeTypeOne = poke.types[0].type.name;
   const pokeName = poke.name.toUpperCase();
   const pokeWeight = poke.weight;
@@ -68,7 +69,10 @@ const renderPokemonStats = (poke) => {
     <p>Height: ${pokeHeight}</p>
     <p>Power: ${pokePower}</p>
     <comments-section id="comment-section" class="comments-section">
-      <h3>Best Comments</h3><p id="comment"></p>
+      <div class="comment-header">
+        <h3>Best Comments</h3>
+        <p id="comment"></p>
+      </div>
       <div class="comments-list"></div>
       <h3>Add your comment</h3>
       <form class="form-class">
@@ -86,7 +90,7 @@ const renderPokemonStats = (poke) => {
   const counter = (serverData) => {
     const adopt = document.querySelector('#comment');
     adopt.innerHTML = `(${serverData.length})`;
-  }
+  };
 
   // GET and DISPLAY comments
   const getComment = (e) => {
@@ -145,6 +149,7 @@ const displayPokemonStats = (e) => {
 const toggle = (id) => {
   if (commentWindow.style.display === 'none') {
     commentWindow.style.display = 'block';
+    document.querySelector('#wrapper').style.visibility = 'hidden';
     displayPokemonStats(id);
   } else {
     commentWindow.style.display = 'none';
