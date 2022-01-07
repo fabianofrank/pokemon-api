@@ -138,6 +138,9 @@ const renderPokemonStats = (poke) => {
   document.getElementById('close').addEventListener('click', toggleClose);
 };
 
+// const myFunc = new renderPokemonStats();
+// const x = myFunc.counter();
+
 // Display Pokemon: PokeAPI
 const displayPokemonStats = (e) => {
   pokeCall(e).then((poke) => {
