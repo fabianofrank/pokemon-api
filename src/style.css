@@ -36,9 +36,10 @@ h3 {
 }
 
 .pokeContainer p {
-  margin: 0;
+  margin: 5px;
   margin-top: -15px;
-  font-size: 2vw;
+  font-size: 15px;
+  font-family: 'Press Start 2P', sans-serif;
 }
 
 #stats-window p {
@@ -120,13 +121,6 @@ h3 {
   color: aliceblue;
 }
 
-.pokeContainer p {
-  margin: 5px;
-  margin-top: -15px;
-  font-size: 15px;
-  font-family: 'Press Start 2P', sans-serif;
-}
-
 footer span {
   background-color: inherit;
   margin: 0;
@@ -170,10 +164,6 @@ footer span {
 
 .lugia {
   background-color: #5c38ff;
-}
-
-.gengar {
-  background-color: #71b7c7;
 }
 
 .ninetales {

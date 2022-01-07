@@ -87,7 +87,7 @@ const renderPokemonStats = (poke) => {
     getCom(e)
       .then((serverData) => {
         let html = '';
-        if (typeof serverData === 'object' && !serverData.hasOwnProperty('error')) {
+        if (typeof serverData === 'object') {
           serverData.forEach((data) => {
             const htmlSegment = `<p>${data.comment}</br>${data.creation_date}: ${data.username}</p>`;
             html += htmlSegment;
