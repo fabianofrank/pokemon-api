@@ -17,91 +17,6 @@ h3 {
   justify-content: center;
 }
 
-<<<<<<< HEAD
-#stats-window {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  background-color: #28292c;
-}
-
-.pokeContainer p {
-  margin: 5px;
-  margin-top: -15px;
-  font-size: 15px;
-  font-family: 'Press Start 2P', sans-serif;
-}
-
-#stats-window p {
-  color: white;
-  margin: 12px 0 0 12px;
-}
-
-#stats-section {
-  position: relative;
-  background-color: tomato;
-  border-radius: 0 0 30px 30px;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#comment-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 96px 0 0 0;
-}
-
-#close {
-  align-self: flex-end;
-  position: absolute;
-  margin: 24px;
-}
-
-#photo {
-  width: 20vw;
-}
-
-#type-tex {
-  background-color: #8a0029;
-  border-radius: 30px;
-  padding: 6px;
-}
-
-.form-class {
-  display: flex;
-  flex-direction: column;
-  max-width: 50vw;
-}
-
-.form-class input {
-  margin: 12px 0 12px;
-  font-size: 1vw;
-  max-height: 5vh;
-  min-height: 2.5vh;
-}
-
-.form-class textarea {
-  margin: 12px 0 12px;
-  font-size: 1vw;
-  max-height: 10vh;
-  min-height: 5vh;
-}
-
-.form-class button {
-  margin: 12px 0 12px;
-}
-
-=======
->>>>>>> f1b3e3313802c11536cd10d57ebdaef7a62fa010
 /* TODO: make changes by moving the buttons down, bigger/other fonts */
 .pokeContainer {
   display: flex;
@@ -119,8 +34,6 @@ h3 {
   transition: 0.5s;
 }
 
-<<<<<<< HEAD
-=======
 .pokeContainer p {
   margin: 0;
   margin-left: 15px;
@@ -138,7 +51,6 @@ h3 {
   margin-bottom: 5px;
 }
 
->>>>>>> f1b3e3313802c11536cd10d57ebdaef7a62fa010
 footer span {
   background-color: inherit;
   margin: 0;
@@ -186,10 +98,6 @@ footer span {
 
 .cresselia {
   background-color: #66b2b3;
-}
-
-.mew {
-  background-color: #9f677b;
 }
 
 .charizard {
