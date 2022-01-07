@@ -20,6 +20,69 @@ h3 {
   justify-content: center;
 }
 
+#wrapper {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#stats-window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: #28292c;
+}
+
+.pokeContainer p {
+  margin: 0;
+  margin-top: -15px;
+  font-size: 2vw;
+}
+
+#stats-window p {
+  color: white;
+  margin: 12px 0 0 12px;
+}
+
+#stats-section {
+  position: relative;
+  background-color: tomato;
+  border-radius: 0 0 30px 30px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#comment-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 96px 0 0 0;
+}
+
+#close {
+  align-self: flex-end;
+  position: absolute;
+  margin: 24px;
+}
+
+#photo {
+  width: 20vw;
+}
+
+#type-tex {
+  background-color: #8a0029;
+  border-radius: 30px;
+  padding: 6px;
+}
+
 /* TODO: make changes by moving the buttons down, bigger/other fonts */
 .pokeContainer {
   display: flex;
@@ -163,6 +226,7 @@ footer span {
 
 #comment-window {
   display: none;
+  height: 100vh;
 }
 
 header {

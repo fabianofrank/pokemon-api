@@ -68,7 +68,7 @@ const renderPokemonStats = (poke) => {
     <p>Height: ${pokeHeight}</p>
     <p>Power: ${pokePower}</p>
     <comments-section id="comment-section" class="comments-section">
-      <h3>Best Comments</h3>
+      <h3>Best Comments</h3><p id="comment"></p>
       <div class="comments-list"></div>
       <h3>Add your comment</h3>
       <form class="form-class">
@@ -82,10 +82,17 @@ const renderPokemonStats = (poke) => {
   html += htmlSegment;
   commentWindow.innerHTML = html;
 
+  // COUNTER
+  const counter = (serverData) => {
+    const adopt = document.querySelector('#comment');
+    adopt.innerHTML = `(${serverData.length})`;
+  }
+
   // GET and DISPLAY comments
   const getComment = (e) => {
     getCom(e)
       .then((serverData) => {
+        counter(serverData);
         let html = '';
         if (typeof serverData === 'object') {
           serverData.forEach((data) => {
