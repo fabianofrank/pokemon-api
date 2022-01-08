@@ -1,4 +1,3 @@
-/* eslint-disbale import/no-cycle no-unused-vars no-undef no-prototype-builtins */
 import { pokeCall } from './apiCall.js';
 import close from './cancel.png';
 
@@ -137,6 +136,9 @@ const renderPokemonStats = (poke) => {
   document.querySelector('.send-comment').addEventListener('click', handleClick);
   document.getElementById('close').addEventListener('click', toggleClose);
 };
+
+// const myFunc = new renderPokemonStats();
+// const x = myFunc.counter();
 
 // Display Pokemon: PokeAPI
 const displayPokemonStats = (e) => {
