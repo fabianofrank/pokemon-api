@@ -20,7 +20,7 @@ This app is the capstone project we built at the end of our JavaScript module. I
 
 [Live Demo Link](https://fabianofrank.github.io/pokemon-api/dist/)
 
-[Live Video Link](https://fabianofrank.github.io/pokemon-api/dist/)
+[Live Video Link](https://youtu.be/lVDp2N6sh6Q/)
 
 
 
