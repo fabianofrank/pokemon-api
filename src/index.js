@@ -5,17 +5,6 @@ import { adoptToggle } from './adoptions.js';
 import Pokeball from './pokeball.png';
 import Heart from './heart.png';
 
-// class Pokecard {
-//   constructor(name, img, weight, height, power, id) {
-//     this.name = name;
-//     this.img = img;
-//     this.weight = weight;
-//     this.height = height;
-//     this.power = power;
-//     this.id = id;
-//   }
-// }
-
 const logoWrapper = document.getElementById('logo');
 logoWrapper.src = `${Pokeball}`;
 const itemCounterWrapper = document.getElementById('itemCounterWrapper');
