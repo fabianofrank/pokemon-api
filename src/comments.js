@@ -1,4 +1,3 @@
-/* eslint-disbale import/no-cycle no-unused-vars no-undef no-prototype-builtins */
 import { pokeCall } from './apiCall.js';
 import close from './cancel.png';
 
